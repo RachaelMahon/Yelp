@@ -1,0 +1,12 @@
+%p= @restaurant.name
+%p= @restaurant.description
+
+- if @reviews.any?
+  - @reviews.each do |review|
+    = review.thoughts
+    = review.rating
+- else
+  %h1 No reviews yet!
+
+
+= link_to "Edit #{@restaurant.name}", edit_restaurant_path(@restaurant)
